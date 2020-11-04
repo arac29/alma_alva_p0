@@ -26,4 +26,9 @@ dependencies {
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.12'
+    
+    	//testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.10.19'
+    	compile group: 'log4j', name: 'log4j', version: '1.2.17'
 }
+		
