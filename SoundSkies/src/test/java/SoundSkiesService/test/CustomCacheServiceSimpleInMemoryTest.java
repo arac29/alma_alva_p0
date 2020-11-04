@@ -33,7 +33,7 @@ public class CustomCacheServiceSimpleInMemoryTest {
 	public void setUp() throws Exception {
 		//int postID, User user, String title, int size, double price, FileType fileType, Genre genre
 		User user1 =new User (303, "usernameTest", "passwordTest", "emailTest", null, null);
-		Post postTest= new Post( 404 , user1, "Post Test", 20.00 , FileType.MP3, Genre.HIPHOP );
+		Post postTest= new Post( user1, "Post Test", 20.00 , FileType.MP3, Genre.HIPHOP );
 		//Purchase purchaseTest= new Purchase(303, 500, postTest, 20.00);
 		
 		testCache.add(postTest);
@@ -43,7 +43,7 @@ public class CustomCacheServiceSimpleInMemoryTest {
 	}
 	@Test
 	public void addToCacheSimplePostTest() {
-		Post postToAdd =new Post(403, new User (202, "cacheUser","passwordCache","cache@email.com", null,null), "song",30.00,FileType.WMA, Genre.EDM);
+		Post postToAdd =new Post( new User (202, "cacheUser","passwordCache","cache@email.com", null,null), "song",30.00,FileType.WMA, Genre.EDM);
 		
 		cacheService.addToCache(postToAdd);
 		

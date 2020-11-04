@@ -21,7 +21,7 @@ public class Purchase {
 		this.user = user;
 	}
 
-	public Purchase(User user, int purchaseID, Post post, double amount) {
+	public Purchase(User user, Post post, double amount) {
 		super();
 		Purchase.purchaseCount++;
 		this.user = user;

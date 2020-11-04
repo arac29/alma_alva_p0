@@ -10,7 +10,7 @@ import SoundSkies.pojos.Post.Genre;
 
 public interface PostService {
 	
-	public Post createPost(int postID, User user, String title, double price, FileType fileType, Genre genre);
+	public Post createPost(User user, String title, double price, FileType fileType, Genre genre);
 
 	public void addPostToList( Post post);
 	

@@ -15,11 +15,18 @@ public class PostServiceImpl implements PostService {
 		super();
 		this.postCache=postCache;
 	}
+	public PostServiceImpl() {
+		super();
+	}
 	@Override
-	public Post createPost(int postID, User user, String title, double price, FileType fileType, Genre genre) {
-		Post newPost = new Post(postID, user, title,price, fileType, genre);
+	public Post createPost (User user, String title, double price, FileType fileType, Genre genre) {
+		
+		Post newPost =new Post( user, title,price, fileType, genre);
+		user.setPosts(newPost);
+		
 		postCache.addToCache(newPost);
-		// TODO Auto-generated method stub
+		
+		
 		return newPost;
 	}
 	@Override

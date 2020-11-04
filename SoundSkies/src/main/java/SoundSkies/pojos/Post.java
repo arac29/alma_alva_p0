@@ -34,7 +34,7 @@ public class Post {
 	
 	private Genre genre;
 
-	public Post(int postID, User user, String title, double price, FileType fileType, Genre genre) {
+	public Post(User user, String title, double price, FileType fileType, Genre genre) {
 		super();
 		Post.postCount++;
 		this.postID = Post.postCount;
