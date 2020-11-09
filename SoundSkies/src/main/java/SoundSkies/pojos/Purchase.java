@@ -1,57 +1,42 @@
 package SoundSkies.pojos;
 
+import java.util.Arrays;
+
 public class Purchase {
 	private static int purchaseCount;
 	
-	private User[] users;
+	private int purchaseId;
 	
-	private int purchaseID;
-	
-	private Post post;
+	private int postId; //FK
 	
 	private double amount;
 
-	public Purchase(User[] users, int purchaseID, Post post, double amount) {
+	public Purchase() {
 		super();
-		Purchase.purchaseCount++;
-		this.users = users;
-		this.purchaseID = Purchase.purchaseCount;
-		this.post = post;
+	}
+
+	public Purchase( int postId, double amount) {
+		super();
+		purchaseCount++;
+		this.purchaseId = purchaseCount;
+		this.postId = postId;
 		this.amount = amount;
 	}
-	
-	/*setters and getters */
-	
-	public static int getPurchaseCount() {
-		return purchaseCount;
+
+	public int getPurchaseId() {
+		return purchaseId;
 	}
 
-	public static void setPurchaseCount(int purchaseCount) {
-		Purchase.purchaseCount = purchaseCount;
+	public void setPurchaseId(int purchaseId) {
+		this.purchaseId = purchaseId;
 	}
 
-	public User[] getUsers() {
-		return users;
+	public int getPostId() {
+		return postId;
 	}
 
-	public void setUsers(User[] users) {
-		this.users = users;
-	}
-
-	public int getPurchaseID() {
-		return purchaseID;
-	}
-
-	public void setPurchaseID(int purchaseID) {
-		this.purchaseID = purchaseID;
-	}
-
-	public Post getPost() {
-		return post;
-	}
-
-	public void setPost(Post post) {
-		this.post = post;
+	public void setPostId(int postId) {
+		this.postId = postId;
 	}
 
 	public double getAmount() {
@@ -62,12 +47,42 @@ public class Purchase {
 		this.amount = amount;
 	}
 
-	
-	
-	
-	
-	
-	
+	@Override
+	public String toString() {
+		return "Purchase [purchaseId=" + purchaseId + ", postId=" + postId + ", amount=" + amount + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(amount);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + postId;
+		result = prime * result + purchaseId;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Purchase other = (Purchase) obj;
+		if (Double.doubleToLongBits(amount) != Double.doubleToLongBits(other.amount))
+			return false;
+		if (postId != other.postId)
+			return false;
+		if (purchaseId != other.purchaseId)
+			return false;
+		return true;
+	}
 	
 	
 }
+	
+	

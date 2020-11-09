@@ -1,0 +1,4 @@
+2020-11-05 14:44:56 INFO  root:31 - Program has started
+2020-11-05 14:45:04 INFO  root:171 - LOG MESSAGE: Authentication completed 
+2020-11-05 14:45:15 INFO  root:141 - LOG MESSAGE: created a post.
+2020-11-05 14:45:18 INFO  root:85 - Exited the app

@@ -1,0 +1,2 @@
+2020-11-05 14:46:32 INFO  root:31 - Program has started
+2020-11-05 14:46:39 INFO  root:171 - LOG MESSAGE: Authentication completed 
