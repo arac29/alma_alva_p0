@@ -23,6 +23,11 @@ public class User {
 		this.email = email;
 	}
 
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getUserId() {
 		return userId;
 	}

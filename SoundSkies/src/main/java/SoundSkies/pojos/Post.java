@@ -27,6 +27,11 @@ public class Post {
 		this.price = price;
 	}
 
+	public Post() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getPostId() {
 		return postId;
 	}

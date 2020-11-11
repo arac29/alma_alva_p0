@@ -10,11 +10,17 @@ import SoundSkies.pojos.User;
 public interface PostService {
 	
 	public Post createPost(Post post);
+	
+	public Post readPost(int postId);
 
-	public void addPostToList(Post post);
+	public int updatePost(int postId,Post post);
+	
+	public int deletePost (int post);
 	
 	public List <Post> getAllPosts();
 	
-	public List<Post> getAllPostsByUser(User user);
+	public List<Post> readAllPostsByUser(int userId);
+
+
 
 }

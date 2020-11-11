@@ -1,5 +1,7 @@
 package SoundSkies.pojos;
 
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Arrays;
 
 public class Purchase {
@@ -9,18 +11,14 @@ public class Purchase {
 	
 	private int postId; //FK
 	
-	private double amount;
+	private String date;
 
-	public Purchase() {
-		super();
+	public static int getPurchaseCount() {
+		return purchaseCount;
 	}
 
-	public Purchase( int postId, double amount) {
-		super();
-		purchaseCount++;
-		this.purchaseId = purchaseCount;
-		this.postId = postId;
-		this.amount = amount;
+	public static void setPurchaseCount(int purchaseCount) {
+		Purchase.purchaseCount = purchaseCount;
 	}
 
 	public int getPurchaseId() {
@@ -39,26 +37,19 @@ public class Purchase {
 		this.postId = postId;
 	}
 
-	public double getAmount() {
-		return amount;
+	public String getDate() {
+		return date;
 	}
 
-	public void setAmount(double amount) {
-		this.amount = amount;
-	}
-
-	@Override
-	public String toString() {
-		return "Purchase [purchaseId=" + purchaseId + ", postId=" + postId + ", amount=" + amount + "]";
+	public void setDate(String date) {
+		this.date = date;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		long temp;
-		temp = Double.doubleToLongBits(amount);
-		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((date == null) ? 0 : date.hashCode());
 		result = prime * result + postId;
 		result = prime * result + purchaseId;
 		return result;
@@ -73,7 +64,10 @@ public class Purchase {
 		if (getClass() != obj.getClass())
 			return false;
 		Purchase other = (Purchase) obj;
-		if (Double.doubleToLongBits(amount) != Double.doubleToLongBits(other.amount))
+		if (date == null) {
+			if (other.date != null)
+				return false;
+		} else if (!date.equals(other.date))
 			return false;
 		if (postId != other.postId)
 			return false;
@@ -81,8 +75,27 @@ public class Purchase {
 			return false;
 		return true;
 	}
+
+	public Purchase() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Purchase(int postId, String date) {
+		super();
+		purchaseCount++;
+		this.purchaseId = purchaseCount;
+		this.postId = postId;
+		this.date = date;
+	}
+
+	@Override
+	public String toString() {
+		return "Purchase [purchaseId=" + purchaseId + ", postId=" + postId + ", date=" + date + "]";
+	}
+
 	
 	
+
+
 }
-	
-	

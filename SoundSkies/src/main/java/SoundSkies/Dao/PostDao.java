@@ -1,14 +1,21 @@
 package SoundSkies.Dao;
+import java.util.List;
+
 import SoundSkies.pojos.*;
+
+
 public interface PostDao {
+	
 	public void createPost(Post post);
 	
 	public Post readPost(int postId);
 	
-	public Post readAllPosts();
+	public List<Post> readAllPosts();
 	
-	public Post updatePost(int postId, Post post);
+	public List <Post> readAllPostsByUser(int userId);
 	
-	public void deletePost(Post post);
+	public int updatePost(int postId, Post post);
+	
+	public int deletePost(int postId);
 
 }

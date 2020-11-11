@@ -7,13 +7,15 @@ public interface PurchaseService {
 	
 	public Purchase createPurchase(Purchase purchase);
 	
-	public void checkInPurchase(Purchase Purchase);
+	public Purchase readPurchase(int purchaseId);
+
+	public void updatePurchase(int purchaseId,Purchase purchase);
 	
-	public void checkOutPurchase(Purchase Purchase);
+	public void deletePurchase (int PurchaseId);
 	
-	public List<Purchase> getAllPurchases();
+	public List<Purchase> readAllPurchases();
 	
-	public List<Purchase> getAllPurchasesByPost(Post post);
+	public List<Purchase> readAllPurchasesByPostId(int postId);
 
 	
 }
